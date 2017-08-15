@@ -3,44 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Wedding Manager</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/hamburgers.css">
-    <link rel="stylesheet" href="css/creativelink/demo.css">
-    <link rel="stylesheet" href="css/creativelink/component.css">
-    <link rel="stylesheet" href="css/creativelink/normalize.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
     <!--Header Starts
     ==================-->
     <header>
-        
+
         <!--Navbar Starts
         ==================-->
-        <nav class="navbar navbar-default">
-            <a class="pull-left"><img src="images/logo.png" alt="logo"></a>
-            <div class="container">
-                <ul class="nav navbar-nav navbar-right header-menu hidden-xs">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Article & Advice</a></li>
-                    <li><a href="#">Wedding Cost</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="admin/account">Login</a></li>
-                </ul>
-                <!---<div class="hamburger hamburger--emphatic-r is-active col-md-1 col-md-offset-1">
-                    <div class="hamburger-box">
-                      <div class="hamburger-inner"></div>
-                    </div>
-                </div>-->
+        <?php include_once('application/views/header.php'); ?>
 
-            </div>
-        </nav>
-        
         <!--Header Image
         =================-->
         <div class="header-image">
@@ -48,25 +21,28 @@
                 <div class="content">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-6">
-                                <h1><span>WE CREATE</span> <br>YOU CELEBRATE</h1>
+                            <div class="col-md-12 nav-search nav-search-margin">
+                              <form>
+                                <select name="category" class="vendor_search magnifying select-left">
+                                    <option value="">Select Category</option>
+                                    <option value="">Bakeries</option>
+                                    <option value="">Beauty Saloon and Spa</option>
+                                    <option value="">Banquet Facilites</option>
+                                    <option value="">Florist</option>
+                                    <option value="">Catering</option>
+                                    <option value="">Decoration</option>
+                                </select>
+                                <select name="city" class="vendor_search magnifying select-left" style="margin-left:20px;">
+                                  <option value="0">Select City</option>
+                                  <option value="Lahore">Lahore</option>
+                                  <option value="Karachi">Karachi</option>
+                                  <option value="Islamabad">Islamabad</option>
+                                </select>
+                                <button class="btn">Find Vendors</button>
+                              </form>
                             </div>
-                            <div class="col-md-6">
-                                <div class="header-form">
-                                    <form action="">
-                                        <select name="category" class="form-control">
-                                            <option value="">--Select Category--</option>
-                                            <option value="">Bakeries</option>
-                                            <option value="">Beauty Saloon and Spa</option>
-                                            <option value="">Banquet Facilites</option>
-                                            <option value="">Florist</option>
-                                            <option value="">Catering</option>
-                                            <option value="">Decoration</option>
-                                        </select>
-                                        <input type="text" class="form-control" placeholder="5 Digit Zip Code" name="zipcode">
-                                        <button class="btn btn-default">Find Vendors</button>
-                                    </form>
-                                </div>
+                            <div class="col-md-12" style="padding-top: 100px;">
+                                <h1><span>Memorable </span>Moments</h1>
                             </div>
                         </div>
                     </div>
@@ -74,8 +50,8 @@
             </div>
         </div>
     </header>
-    
-    
+
+
     <!--Services
     ==============-->
     <section>
@@ -83,7 +59,7 @@
            <div class="container">
                <h2>It’s Simple. You Have An Event To Plan And <br><span> We Have The Solution</span></h2>
                 <div class="owl-carousel" id="service-slider">
-                   
+
                     <div class="item">
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/bangles.jpg);background-size: cover;">
                             <a href="#">
@@ -93,7 +69,7 @@
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/decorators.jpg);background-size: cover;">
                             <a href="#">
                                 <img src="images/flags.png" alt="">
@@ -103,7 +79,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="item">
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/Dj.jpg);background-size: cover;">
                             <a href="#">
@@ -113,7 +89,7 @@
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/bridal_saloon.jpg);background-size: cover;">
                             <a href="#">
                                 <img src="images/salon.png" alt="">
@@ -123,8 +99,8 @@
                             </a>
                         </div>
                     </div>
-                        
-                    
+
+
                     <div class="item">
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/bakery.jpg);background-size: cover;">
                             <a href="#">
@@ -134,7 +110,7 @@
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/catering.jpg);background-size: cover;">
                             <a href="#">
                                 <img src="images/catering.png" alt="">
@@ -144,9 +120,9 @@
                             </a>
                         </div>
                     </div>
-                        
-                        
-                    
+
+
+
                     <div class="item">
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/Invitation.jpg);background-size: cover;">
                             <a href="#">
@@ -156,7 +132,7 @@
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/limousine.jpg);background-size: cover;">
                             <a href="#">
                                 <img src="images/tool.png" alt="">
@@ -166,7 +142,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="item">
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/photographer.jpg);background-size: cover;">
                             <a href="#">
@@ -176,7 +152,7 @@
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/florist.jpg);background-size: cover;">
                             <a href="#">
                                 <img src="images/florist.png" alt="">
@@ -186,11 +162,11 @@
                             </a>
                         </div>
                     </div>
-                    
+
                 </div>
            </div>
         </div>
-    </section>   
+    </section>
 
     <!--WedingCost-->
     <section>
@@ -198,22 +174,22 @@
             <div class="content" style="">
                 <div class="container">
                     <h1><span>Wedding Cost Savings</span><br>
-                    How much others couples in your area spent on wedding </h1> 
+                    How much others couples in your area spent on wedding </h1>
                     <button class="btn btn-default">Wedding Cost</button>
-                </div>    
+                </div>
             </div>
         </div>
     </section>
 
     <!--Latest News
     =====================-->
-    
+
     <section>
         <div class="blog">
             <div class="container">
                 <h1>LATEST NEWS</h1>
                 <h4>Whether planning an intimate gathering or a wedding for hundreds, <br> learn the details on how to make your event successful.</h4>
-                
+
                 <div class="col-md-4 col-sm-6">
                     <img src="images/blog1.jpg" class="img-responsive" alt="">
                     <div class="content">
@@ -222,9 +198,9 @@
                         <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                         <a href="">Read More</a>
                     </div>
-                    
+
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6">
                     <img src="images/blog2.jpg" class="img-responsive" alt="">
                     <div class="content">
@@ -234,8 +210,8 @@
                         <a href="">Read More</a>
                     </div>
                 </div>
-                
-                <div class="col-md-4 col-sm-4 hidden-sm">
+
+                <div class="col-md-4 col-sm-6">
                     <img src="images/blog3.jpg" class="img-responsive" alt="">
                     <div class="content">
                         <div class="date"><p>October 18, 2015</p></div>
@@ -244,71 +220,14 @@
                         <a href="">Read More</a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
-    
-    
-    <!--Footer
-    =============-->
-    
-    <footer>
-        <div class="content">
-            <div class="container">
-                
-                <div class="subscribe">
-                    <div class="col-md-6">
-                        <h1>SUBSCRIBE NOW</h1>
-                        <h3>To get our latest offers</h3>
-                    </div>
 
-                    <div class="col-md-5 pull-right">
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Enter Your Email">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                </span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                <div class="footer-bottom">
-                    <div class="brand"><h2><a href="">BRAND</a></h2></div>
-                    <ul class="nav navbar-nav">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Article & Advice</a></li>
-                        <li><a href="">Wedding Cost</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Login</a></li>
-                    </ul>
-                    <div class="social">
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-                    </div>   
-                </div>
-                
-            </div>
-        </div>
-    </footer>
-    
-    <div class="copyright">CopyRights</div>
-    
-    
+
     <!--Footer
     =============-->
-    
-    
-    
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/linkhover.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/waypoint.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/script.js"></script>
+    <?php include_once('application/views/footer.php'); ?>
 </body>
 </html>

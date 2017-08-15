@@ -2,53 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wedding Manager</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/hamburgers.css">
-    <link rel="stylesheet" href="css/creativelink/demo.css">
-    <link rel="stylesheet" href="css/creativelink/component.css">
-    <link rel="stylesheet" href="css/creativelink/normalize.css">
-    <link rel="stylesheet" href="css/switchable.css">
-    <link rel="stylesheet" href="css/datepicker.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Quotation</title>
 </head>
 <body>
-    
+
     <!--Header Starts
     ==================-->
-    <header>
-        
-        <!--Navbar Starts
-        ==================-->
-        <nav class="navbar navbar-default">
-            <a class="pull-left"><img src="images/logo.png" alt="logo"></a>
-            <div class="container">
-                <ul class="nav navbar-nav navbar-right header-menu hidden-xs">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Article & Advice</a></li>
-                    <li><a href="#">Wedding Cost</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
-                <div class="hamburger hamburger--emphatic-r is-active col-md-1 col-md-offset-1">
-                    <div class="hamburger-box">
-                      <div class="hamburger-inner"></div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        
-    </header>
-    
-    
+    <?php include_once('application/views/header.php'); ?>
+
+
 <!--    form part
    =================-->
    <div class="main-form">
       <div class="content">
        <div class="container">
-          
+
            <div class="form-header">
                <div class="col-md-4 col-sm-12 active" id="step1">
                    <h4>STEP ONE</h4>
@@ -60,16 +28,16 @@
                    <h4>STEP THREE</h4>
                </div>
            </div>
-           
+
            <div class="form-body">
-               
+
                <!--STEP ONE
                ==============-->
                <section>
                    <div class="step-one">
                        <form action="#">
                            <h2>Tell Us About Your Event</h2>
-                           
+
                            <div class="form-group">
                                <label for="eventtype" class="col-sm-5 control-label">Event Type</label>
                                <div class="col-sm-7">
@@ -83,17 +51,17 @@
                                    </select>
                                </div>
                            </div>
-                           
-                           
-                           
+
+
+
                            <div class="form-group">
                                <label for="zip" class="col-sm-5 control-label">Event Zone</label>
                                <div class="col-sm-7">
                                    <input type="text" class="form-control" placeholder="5 Digit ZIP" name="zip">
                                </div>
                            </div>
-                           
-                           
+
+
                            <div class="form-group">
                                <label for="guestexpect" class="col-sm-5 control-label">Guest Expected</label>
                                <div class="col-sm-7">
@@ -110,16 +78,16 @@
                                    </select>
                                </div>
                            </div>
-                           
+
                            <div class="form-group">
                                <label for="eventdate" class="col-sm-5 control-label">Event Date</label>
                                <div class="col-sm-7">
                                    <input type="text" class="form-control datepicker" name="eventdate" placeholder="MM-DD-YYYY">
                                </div>
                            </div>
-                           
+
                            <h2 style="margin-top: 80px;">Do You Also Need Quotes <br> For Other Services?</h2>
-                           
+
                            <div class="col-md-6 col-sm-12">
                                <input type="checkbox" class="switch" data-label="Bakeries" >
                                <input type="checkbox" class="switch" data-label="Beauty Salons And Spas" >
@@ -131,7 +99,7 @@
                                <input type="checkbox" class="switch" data-label="Florists" >
                                <input type="checkbox" class="switch" data-label="Invitations" >
                            </div>
-                           
+
                            <div class="col-md-6 col-sm-12">
                                <input type="checkbox" class="switch" data-label="Limousine" >
                                <input type="checkbox" class="switch" data-label="Musician" >
@@ -143,24 +111,24 @@
                                <input type="checkbox" class="switch" data-label="Videographers" >
                                <input type="checkbox" class="switch" data-label="Wedding Event Planners" >
                            </div>
-                           
-                           
-                           
+
+
+
                        </form>
                        <button class="btn btn-default pull-right next-2">Next Step</button>
                    </div>
                </section>
-               
+
                <!--STEP TWO
                ===============-->
-               
+
                <section>
                    <div class="step-two" style="display:none">
                        <h2>Tell Us About Your Needs</h2>
                        <form action="#">
-                           
+
                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                             
+
                               <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingOne">
                                   <h4 class="panel-title">
@@ -172,7 +140,7 @@
                                 </div>
                                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                   <div class="panel-body">
-                                    
+
                                     <div class="form-group">
                                        <label for="banquet-budget" class="col-sm-5 control-label">Budget</label>
                                        <div class="col-sm-7">
@@ -189,7 +157,7 @@
                                            </select>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="banquet-time" class="col-sm-5 control-label">Time Needed</label>
                                        <div class="col-sm-7">
@@ -217,7 +185,7 @@
                                            </select>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="" class="col-sm-5 control-label">Type of Venue</label>
                                        <div class="col-sm-7">
@@ -230,8 +198,8 @@
                                            <input type="checkbox" class="switch" data-label="Limousine" >
                                        </div>
                                    </div>
-                                   
-                                   
+
+
                                     <div class="form-group">
                                        <label for="banquet-guest" class="col-sm-5 control-label">Number of Guests</label>
                                        <div class="col-sm-7">
@@ -248,19 +216,19 @@
                                            </select>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="banquet-comment" class="col-sm-5 control-label">Comments</label>
                                        <div class="col-sm-7">
                                            <textarea name="banquet-comment" cols="20" rows="5" placeholder="Any Special Requests or Needs..."></textarea>
                                        </div>
                                    </div>
-                                   
+
                                   </div>
                                 </div>
                               </div>
-                              
-                              
+
+
                               <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingThree">
                                   <h4 class="panel-title">
@@ -272,7 +240,7 @@
                                 </div>
                                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                   <div class="panel-body">
-                                    
+
                                     <div class="form-group">
                                        <label for="banquet-budget" class="col-sm-5 control-label">Budget</label>
                                        <div class="col-sm-7">
@@ -289,7 +257,7 @@
                                            </select>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="banquet-time" class="col-sm-5 control-label">Time Needed</label>
                                        <div class="col-sm-7">
@@ -317,7 +285,7 @@
                                            </select>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="" class="col-sm-5 control-label">Type of Venue</label>
                                        <div class="col-sm-7">
@@ -330,8 +298,8 @@
                                            <input type="checkbox" class="switch" data-label="Limousine" >
                                        </div>
                                    </div>
-                                   
-                                   
+
+
                                     <div class="form-group">
                                        <label for="banquet-guest" class="col-sm-5 control-label">Number of Guests</label>
                                        <div class="col-sm-7">
@@ -348,7 +316,7 @@
                                            </select>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="banquet-guest" class="col-sm-5 control-label">Number of Guests</label>
                                        <div class="col-sm-7 radiocheck">
@@ -366,18 +334,18 @@
                                             </div>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="banquet-comment" class="col-sm-5 control-label">Comments</label>
                                        <div class="col-sm-7">
                                            <textarea name="banquet-comment" cols="20" rows="5" placeholder="Any Special Requests or Needs..."></textarea>
                                        </div>
                                    </div>
-                                   
+
                                   </div>
                                 </div>
                               </div>
-                              
+
                               <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingTwo">
                                   <h4 class="panel-title">
@@ -389,7 +357,7 @@
                                 </div>
                                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                   <div class="panel-body">
-                                    
+
                                     <div class="form-group">
                                        <label for="banquet-budget" class="col-sm-5 control-label">Budget</label>
                                        <div class="col-sm-7">
@@ -406,9 +374,9 @@
                                            </select>
                                        </div>
                                    </div>
-                                   
-                                   
-                                   
+
+
+
                                    <div class="form-group">
                                        <label for="banquet-time" class="col-sm-5 control-label">Time Needed</label>
                                        <div class="col-sm-7">
@@ -436,7 +404,7 @@
                                            </select>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="" class="col-sm-5 control-label">Type of Venue</label>
                                        <div class="col-sm-7">
@@ -449,8 +417,8 @@
                                            <input type="checkbox" class="switch" data-label="Limousine" >
                                        </div>
                                    </div>
-                                   
-                                   
+
+
                                     <div class="form-group">
                                        <label for="banquet-guest" class="col-sm-5 control-label">Number of Guests</label>
                                        <div class="col-sm-7">
@@ -467,7 +435,7 @@
                                            </select>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="banquet-guest" class="col-sm-5 control-label">Number of Guests</label>
                                        <div class="col-sm-7 radiocheck">
@@ -485,66 +453,66 @@
                                             </div>
                                        </div>
                                    </div>
-                                   
+
                                    <div class="form-group">
                                        <label for="banquet-comment" class="col-sm-5 control-label">Comments</label>
                                        <div class="col-sm-7">
                                            <textarea name="banquet-comment" cols="20" rows="5" placeholder="Any Special Requests or Needs..."></textarea>
                                        </div>
                                    </div>
-                                   
+
                                   </div>
                                 </div>
                               </div>
-                              
-                              
+
+
 
                            </div>
-                           
+
                        </form>
-                       
+
                            <button class="btn btn-default pull-right next-3">Next Step</button>
                            <button class="btn btn-default pull-left prev-1" style="width: 140px; margin-left: 3%">Previous Step</button>
                    </div>
                </section>
-               
+
                <!--STEP THREE
                =======================-->
-               
+
                <section>
                    <div class="step-three" style="display:none">
                        <h2>Tell Us About Your Needs</h2>
                        <form action="">
                            <div class="col-md-6 col-sm-12">
-                              
+
                                <div class="form-group">
                                     <label for="name1" class="col-sm-5 control-label">First Name</label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control" placeholder="First Name" name="name1">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="name2" class="col-sm-5 control-label">Last Name</label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control" placeholder="Last Name" name="name2">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="email" class="col-sm-5 control-label">Email</label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control" placeholder="Email" name="email">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="phone" class="col-sm-5 control-label">Phone Number</label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control" placeholder="Phone Number" name="phone">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="preference" class="col-sm-5 control-label">Contact Prefences</label>
                                     <div class="col-sm-7">
@@ -556,7 +524,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="time" class="col-sm-5 control-label">Best Time to Call</label>
                                     <div class="col-sm-7">
@@ -570,7 +538,7 @@
                                     </div>
                                 </div>
                            </div>
-                           
+
                            <div class="col-md-6 col-sm-12">
                                <div class="confirm">
                                    <div class="header">
@@ -580,7 +548,7 @@
                                        <button class="btn btn-default facebook"><span style="padding-right: 30px"><i class="fa fa-facebook" aria-hidden="true"></i></span>FACEBOOK</button>
                                        <button class="btn btn-default twitter"><span style="padding-right: 25px"><i class="fa fa-twitter" aria-hidden="true"></i></span> TWITTER</button>
                                        <button class="btn btn-default google"><span><i class="fa fa-google-plus" aria-hidden="true"></i></span> GOOGLE+</button>
-                                       
+
                                        <p>This is just to confirm your request. We will never post anything without your premission.</p>
                                    </div>
                                </div>
@@ -589,77 +557,18 @@
                       <button class="btn btn-default pull-left prev-2" style="width: 150px;margin-left: 40px;">Previous Step</button>
                    </div>
                </section>
-               
+
            </div>
-           
+
        </div>
        </div>
    </div>
-   
-    
-    
+
+
+
    <!--Footer
     =============-->
-    
-    <footer>
-        <div class="content">
-            <div class="container">
-                
-                <div class="subscribe">
-                    <div class="col-md-6">
-                        <h1>SUBSCRIBE NOW</h1>
-                        <h3>To get our latest offers</h3>
-                    </div>
 
-                    <div class="col-md-5 pull-right">
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Enter Your Email">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                </span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                <div class="footer-bottom">
-                    <div class="brand"><h2><a href="">BRAND</a></h2></div>
-                    <ul class="nav navbar-nav">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Article & Advice</a></li>
-                        <li><a href="">Wedding Cost</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Login</a></li>
-                    </ul>
-                    <div class="social">
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-                    </div>   
-                </div>
-                
-            </div>
-        </div>
-    </footer>
-    
-    <div class="copyright">SK © 2016 All Rights Reserved</div>
-    
-    
-    <!--Footer
-    =============-->
-    
-    
-    
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/linkhover.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/waypoint.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/switchable.min.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/script.js"></script>
-
+    <?php include_once('application/views/footer.php'); ?>
 </body>
 </html>

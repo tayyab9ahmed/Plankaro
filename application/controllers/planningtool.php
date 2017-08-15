@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Quote  extends CI_Controller {
+class planningtool extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,9 +18,21 @@ class Quote  extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function login()
+	{
+		$this->load->helper('url');
+		$this->load->view('planningtool/login.php');
+	}
+
+  public function signup()
+	{
+		$this->load->helper('url');
+		$this->load->view('planningtool/signup.php');
+	}
+
 	public function index()
 	{
 		$this->load->helper('url');
-		$this->load->view('quote/index.php');
+		$this->load->view('planningtool/dashboard.php');
 	}
 }
