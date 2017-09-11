@@ -28,14 +28,14 @@
                                     <div class="form-group">
                                         <label for="email" class="col-sm-5 control-label">Email</label>
                                         <div class="col-sm-7">
-                                            <input type="email" class="form-control" placeholder="Email" name="email" required>
+                                            <input type="email" class="form-control" placeholder="Email" name="email" required="required">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="phone" class="col-sm-5 control-label">Password</label>
                                         <div class="col-sm-7">
-                                            <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
+                                            <input type="password" placeholder="Password" id="password" class="form-control" name="password" required="required">
                                         </div>
                                     </div>
 
@@ -43,7 +43,7 @@
                                       <button class="btn btn-default" style="width: 100%;">Let me in</button>
                                </div>
                                <div class="form-group">
-                                    <span>Create account or forgot password</span>
+                                    <span><a href="signup">Create account </a> or forgot password</span>
                                </div>
 
                                </div>

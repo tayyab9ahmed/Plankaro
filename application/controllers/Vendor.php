@@ -2,7 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Vendor extends CI_Controller {
-
+	function __construct()
+	{
+			parent::__construct();
+			$this->load->model('vendor_model');
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -26,7 +30,42 @@ class Vendor extends CI_Controller {
 
 	public function detail()
 	{
+		$vendor_id = $this->uri->segment(3);
+		$data['get_all_vendor_type'] = $this->vendor_model->get_all_vendor_type();
+		$data['get_vendor_by_id'] = $this->vendor_model->get_vendor_by_id($vendor_id);
+		$vendor_type =  $data['get_vendor_by_id']['Vendor_type'];
+		$data['get_vendor_services'] = $this->vendor_model->get_vendor_services($vendor_type);
+		//$vendor_type =
 		$this->load->helper('url');
-		$this->load->view('vendor/detail.php');
+		$this->load->view('vendor/detail.php',$data);
+	}
+
+	public function search()
+	{
+		$vendor_type = $this->input->post('vendor_type');
+		$vendor_city = $this->input->post('city');
+		if(isset($vendor_type) && count($vendor_type)>0)
+		{
+			$data['get_all_vendor_type'] = $this->vendor_model->get_all_vendor_type();
+			$data['listing'] = $this->vendor_model->get_all_vendor_by_type_city($vendor_type,$vendor_city);
+			$this->load->view('vendor/index.php',$data);
+			//var_dump($listing);
+			//exit();
+		}
+		else {
+			$vendor_type = $this->input->get('vendor_type');
+			if(isset($vendor_type) && count($vendor_type)>0)
+			{
+				$data['get_all_vendor_type'] = $this->vendor_model->get_all_vendor_type();
+				$data['listing'] = $this->vendor_model->get_all_vendor_by_type($vendor_type);
+				$this->load->view('vendor/index.php',$data);
+				//var_dump($listing);
+				//exit();
+			}
+			else {
+				redirect('welcome');
+			}
+
+		}
 	}
 }

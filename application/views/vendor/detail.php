@@ -17,23 +17,26 @@
             <div class="container">
               <h1><span>Find The Best Suppliers In Your Area</span></h1>
               <div class="col-md-12 nav-search">
-                <form>
-                  <select name="category" class="vendor_search magnifying">
+                <form method="post" action="../search">
+                  <select required="required" name="vendor_type"  class="vendor_search magnifying select-left">
                       <option value="">Select Category</option>
-                      <option value="">Bakeries</option>
-                      <option value="">Beauty Saloon and Spa</option>
-                      <option value="">Banquet Facilites</option>
-                      <option value="">Florist</option>
-                      <option value="">Catering</option>
-                      <option value="">Decoration</option>
+                      <?php if(isset($get_all_vendor_type) && count($get_all_vendor_type) > 0)
+                      {
+                        foreach ($get_all_vendor_type as $vendor_type)
+                        {
+                            ?><option value="<?php echo $vendor_type['Vendor_type_id']; ?>"><?php echo $vendor_type['Vendor_type_name']; ?></option>
+
+                        <?php
+                        }
+                      }?>
                   </select>
-                  <select name="city" class="vendor_search magnifying" style="margin-left:20px;">
-                    <option value="0">Select City</option>
+                  <select  required="required" name="city" class="vendor_search magnifying select-left" style="margin-left:20px;">
+                    <option value="">Select City</option>
                     <option value="Lahore">Lahore</option>
                     <option value="Karachi">Karachi</option>
                     <option value="Islamabad">Islamabad</option>
                   </select>
-                  <button class="btn">Find Vendors</button>
+                  <input type="submit" value="Find Vendors" class="btn btn-success" style="font-size:20px; margin-left:150px">
                 </form>
               </div>
             </div>
@@ -41,10 +44,10 @@
             <div class="container" style="margin-top: 50px;margin-bottom: 30px;">
               <div class="row">
                 <div class="col-md-6">
-                  <span class="vendor_name" >Taj Banquette Hall.<span>
+                  <span class="vendor_name"><?php echo $get_vendor_by_id['Vendor_name']; ?>.<span>
                 </div>
                 <div class="col-md-3">
-                    <button class="btn btn-warning" data-toggle="modal" data-target="#Quote"><i class="glyphicon glyphicon-earphone" style="font-size: 20px;margin-right: 10px;"></i>Request Quote</button>
+                    <button class="btn btn-warning" data-toggle="modal" data-target="#Quote">Request Quote</button>
                 </div>
                 <div class="col-md-3">
                   <button class="btn btn-success" data-toggle="modal" data-target="#ContactInfo"><i class="glyphicon glyphicon-earphone" style="font-size: 20px;margin-right: 10px;"></i>View Contact Info</button>
@@ -67,21 +70,21 @@
                     <div style="min-height:700px;">
                     <div class="col-md-6">
                       <div class="row">
-                        <span class="vendor_name">Taj Banquette Hall.</span>
+                        <span class="vendor_name"><?php echo $get_vendor_by_id['Vendor_name']; ?>.</span>
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="row">
                         <i class="glyphicon glyphicon-earphone" style="font-size:20px;"></i>
-                        <span class="vendor_name" style="padding-left:15px">0332-5020315.</span>
+                        <span class="vendor_name" style="padding-left:15px"><?php echo $get_vendor_by_id['Vendor_contact_no']; ?>.</span>
                       </div>
                     </div>
 
                     <div class="col-md-12">
                       <div class="row">
                         <i class="glyphicon glyphicon-map-marker" style="font-size:20px;"></i>
-                          <span style="font-size:20px; padding-left:15px; color:#aa6708;"><b>14 Main, Ra bazar, Lahore Cantt.</b></span>
+                          <span style="font-size:20px; padding-left:15px; color:#aa6708;"><b><?php echo $get_vendor_by_id['Vendor_address']; ?>.</b></span>
                       </div>
                     </div>
 
@@ -170,19 +173,17 @@
             <div class="container" style="margin-top: 30px;margin-bottom: 30px;">
               <div class="row">
                 <div class="col-md-8">
-                  <img src="../images/blog1.jpg" class="img-responsive" alt="">
+                  <img src="../../images/blog2.jpg" class="img-responsive" alt="">
                 </div>
                 <div class="col-md-4">
                   <span class="vendor_name" style="font-size: 22px;padding-left: 140px;">Details</span>
                     <hr></hr>
                     <i class="glyphicon glyphicon-map-marker" style="font-size:20px;"></i>
-                      <span style="font-size:20px; padding-left:15px; color:#aa6708;"><b>14 Main, Ra bazar, Lahore Cantt.</b></span>
+                      <span style="font-size:20px; padding-left:15px; color:#aa6708;"><b><?php echo $get_vendor_by_id['Vendor_address']; ?>.</b></span>
                     <hr></hr>
-                    <i class="glyphicon glyphicon-star-empty" style="font-size:25px;"></i>
-                    <i class="glyphicon glyphicon-star-empty" style="font-size:25px;"></i>
-                    <i class="glyphicon glyphicon-star-empty" style="font-size:25px;"></i>
-                    <i class="glyphicon glyphicon-star-empty" style="font-size:25px;"></i>
-                    <i class="glyphicon glyphicon-star-empty" style="font-size:25px;"></i>
+                    <span><i class="glyphicon glyphicon-thumbs-up" style="font-size:25px;  color:darkgray;">20</i><span>
+                    <span><i class="glyphicon glyphicon-thumbs-down" style="font-size:25px;margin-left:50px; margin-right:50px; color:darkgray;">10</i><span>
+                    <button class="btn btn-info" data-toggle="modal" data-target="#feedback">Leave Feedback</button>
                       <hr></hr>
                     <div class="col-md-12" >
                       <div id="map" style="height:300px; width:100%;"></div>
@@ -192,31 +193,36 @@
 
 
               <div>
-                <div class="col-md-12" style="margin-top:30px;">
+                <div class="col-md-6" style="margin-top:30px;">
                   <ul class="nav nav-pills nav-justified">
-                    <li class="active"><a data-toggle="tab" href="#home">Description</a></li>
-                    <li><a data-toggle="tab" href="#menu1">Map</a></li>
-                    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-                    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+                    <li class="active"><a data-toggle="tab" href="#Overview">Overview</a></li>
+                    <li><a data-toggle="tab" href="#Avalaiblity">Avalaiblity</a></li>
                   </ul>
 
                   <div class="tab-content">
-                    <div id="home" class="tab-pane fade in active">
-                      <h3>Description</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div id="menu1" class="tab-pane fade">
-                      <h3>Map</h3>
-                      <div class="col-md-12" >
-                        <div id="map" style="height:300px; width:100%;"></div>
+                    <div id="Overview" class="tab-pane fade in active">
+                      <h3 style="color: #FCB41E;"><b>Key information</b></h3>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <tbody>
+                            <?php if(isset($get_vendor_services) && count($get_vendor_services)>0)
+                            {
+                              foreach ($get_vendor_services as $vendor_services) {
+                              ?>
+                              <tr>
+                                <td><?php echo $vendor_services['Service_title'];?></td>
+                                  <th>yes</th>
+                              </tr>
+                              <?php
+                              }
+                            }?>
+
+                          </tbody>
+                        </table>
                       </div>
                     </div>
-                    <div id="menu2" class="tab-pane fade">
-                      <h3>Menu 2</h3>
-                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                    </div>
-                    <div id="menu3" class="tab-pane fade">
-                      <h3>Menu 3</h3>
+                    <div id="Avalaiblity" class="tab-pane fade">
+                      <h3>Avalaiblity</h3>
                       <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                     </div>
                   </div>
@@ -229,12 +235,34 @@
   </section>
   <script>
   function initmap() {
+    var lat;
+    var long;
     var mapCanvas = document.getElementById("map");
-    var mapOptions = {
-      center: new google.maps.LatLng(31.5546, 74.3572),
-      zoom: 10
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions);
+    var address = '<?php echo $get_vendor_by_id['Vendor_address']; ?>';
+    // Initialize the Geocoder
+    $.ajax({
+        url:"http://maps.googleapis.com/maps/api/geocode/json?address="+address+"&sensor=false",
+        type: "POST",
+        success:function(res){
+          debugger;
+           lat = res.results[0].geometry.location.lat;
+           long = res.results[0].geometry.location.lng;
+           var mapOptions = {
+             center: new google.maps.LatLng(31.5546, 74.3572),
+             zoom: 12
+           }
+           var myLatLng = {lat: lat, lng: long};
+           var map = new google.maps.Map(mapCanvas, mapOptions);
+           var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: address
+              });
+        }
+      });
+
+
+
   }
   </script>
   <script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhrfVsc7F6lbBqXi_yxhGRILUEzB6XpPQ&callback=initmap" async defer></script>

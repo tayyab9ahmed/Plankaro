@@ -22,23 +22,26 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 nav-search nav-search-margin">
-                              <form>
-                                <select name="category" class="vendor_search magnifying select-left">
+                              <form method="post" action="Vendor/search">
+                                <select required="required" name="vendor_type"  class="vendor_search magnifying select-left">
                                     <option value="">Select Category</option>
-                                    <option value="">Bakeries</option>
-                                    <option value="">Beauty Saloon and Spa</option>
-                                    <option value="">Banquet Facilites</option>
-                                    <option value="">Florist</option>
-                                    <option value="">Catering</option>
-                                    <option value="">Decoration</option>
+                                    <?php if(isset($get_all_vendor_type) && count($get_all_vendor_type) > 0)
+                                    {
+                                      foreach ($get_all_vendor_type as $vendor_type)
+                                      {
+                                          ?><option value="<?php echo $vendor_type['Vendor_type_id']; ?>"><?php echo $vendor_type['Vendor_type_name']; ?></option>
+
+                                      <?php
+                                      }
+                                    }?>
                                 </select>
-                                <select name="city" class="vendor_search magnifying select-left" style="margin-left:20px;">
-                                  <option value="0">Select City</option>
+                                <select  required="required" name="city" class="vendor_search magnifying select-left" style="margin-left:20px;">
+                                  <option value="">Select City</option>
                                   <option value="Lahore">Lahore</option>
                                   <option value="Karachi">Karachi</option>
                                   <option value="Islamabad">Islamabad</option>
                                 </select>
-                                <button class="btn">Find Vendors</button>
+                                <input type="submit" value="Find Vendors" class="btn btn-success" style="font-size:20px; margin-left:150px;">
                               </form>
                             </div>
                             <div class="col-md-12" style="padding-top: 100px;">
@@ -62,10 +65,10 @@
 
                     <div class="item">
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/bangles.jpg);background-size: cover;">
-                            <a href="#">
+                            <a href="Vendor/search/?vendor_type=1">
                                 <img src="images/food.png" alt="">
                                 <div class="content">
-                                    <h1>Wedding</h1>
+                                    <h1>Banquet Hall</h1>
                                 </div>
                             </a>
                         </div>
@@ -89,19 +92,6 @@
                                 </div>
                             </a>
                         </div>
-
-                        <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/bridal_saloon.jpg);background-size: cover;">
-                            <a href="#">
-                                <img src="images/salon.png" alt="">
-                                <div class="content">
-                                    <h1>Bridal Salon</h1>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <div class="item">
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/bakery.jpg);background-size: cover;">
                             <a href="#">
                                 <img src="images/bakery.png" alt="">
@@ -110,6 +100,19 @@
                                 </div>
                             </a>
                         </div>
+
+                    </div>
+
+
+                    <div class="item">
+                      <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/photographer.jpg);background-size: cover;">
+                          <a href="#">
+                              <img src="images/camera.png" alt="">
+                              <div class="content">
+                                  <h1>Photography</h1>
+                              </div>
+                          </a>
+                      </div>
 
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/catering.jpg);background-size: cover;">
                             <a href="#">
@@ -144,14 +147,15 @@
                     </div>
 
                     <div class="item">
-                        <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/photographer.jpg);background-size: cover;">
-                            <a href="#">
-                                <img src="images/camera.png" alt="">
-                                <div class="content">
-                                    <h1>Photography</h1>
-                                </div>
-                            </a>
-                        </div>
+                      <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/bridal_saloon.jpg);background-size: cover;">
+                          <a href="#">
+                              <img src="images/salon.png" alt="">
+                              <div class="content">
+                                  <h1>Bridal Salon</h1>
+                              </div>
+                          </a>
+                      </div>
+
 
                         <div class="row" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(images/florist.jpg);background-size: cover;">
                             <a href="#">

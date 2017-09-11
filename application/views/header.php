@@ -35,11 +35,11 @@
         </div>
         <div class="container">
             <ul class="nav navbar-nav navbar-right header-menu hidden-xs">
-                <li><a href="#"><b><span style="color:#E7873B">Home</span></b></a></li>
+                <li><a href="<?php echo base_url()?>welcome"><b><span style="color:#E7873B">Home</span></b></a></li>
                 <li><a href="#"><b><span style="color:#E7873B">Suppliers</span></b></a></li>
-                <li><a href="#"><b><span style="color:#E7873B">Cost</span></b></a></li>
+                <li><a href="<?php echo base_url()?>WeddingCost"><b><span style="color:#E7873B">Cost</span></b></a></li>
                 <li><a href="#"><b><span style="color:#E7873B">News</span></b></a></li>
-                <li><a href="#"><b><span style="color:#E7873B">Login</span></b></a></li>
+                <li><a href="<?php echo base_url()?>planningtool/login"><b><span style="color:#E7873B">Login</span></b></a></li>
             </ul>
 
         </div>

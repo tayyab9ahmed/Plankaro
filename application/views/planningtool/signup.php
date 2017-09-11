@@ -15,7 +15,7 @@
          <div class="form-body">
     <section>
                        <div class="step-three" style="">
-                           <h2>Sign Up</h2>
+                           <h2>Create Account</h2>
                            <div class="row">
                              <div class="col-md-8">
                                <i class="glyphicon glyphicon-user" style="font-size: 150px;margin-left: 365px;"></i>
@@ -27,27 +27,27 @@
                                    <div class="form-group">
                                         <label for="name1" class="col-sm-5 control-label">First Name</label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" placeholder="First Name" name="name1" required>
+                                            <input type="text" class="form-control" placeholder="First Name" name="name1" required="required">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name2" class="col-sm-5 control-label">Last Name</label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" placeholder="Last Name" name="name2" required>
+                                            <input type="text" class="form-control" placeholder="Last Name" name="name2" required="required">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="email" class="col-sm-5 control-label">Email</label>
                                         <div class="col-sm-7">
-                                            <input type="email" class="form-control" placeholder="Email" name="email" required>
+                                            <input type="email" class="form-control" placeholder="Email" name="email" required="required">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="phone" class="col-sm-5 control-label">Phone Number</label>
                                         <div class="col-sm-7">
-                                            <input type="text" id="phoneNumber" class="form-control" placeholder="03321231231" name="phoneNumber" required>
+                                            <input type="text" id="phoneNumber" class="form-control" placeholder="03321231231" name="phoneNumber" required="required">
                                             <span id='message_phone'></span>
                                         </div>
                                     </div>
@@ -55,13 +55,13 @@
                                     <div class="form-group">
                                         <label for="phone" class="col-sm-5 control-label">Password</label>
                                         <div class="col-sm-7">
-                                            <input type="password" id="password" class="form-control" placeholder="password" name="password" required>
+                                            <input type="password" id="password" class="form-control" placeholder="password" name="password" required="required">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="phone" class="col-sm-5 control-label">Confirm Password</label>
                                         <div class="col-sm-7">
-                                            <input type="password" id="confirm_password" placeholder="password" class="form-control"  name="confirm_password" required>
+                                            <input type="password" id="confirm_password" placeholder="password" class="form-control"  name="confirm_password" required="required">
                                             <span id='message_pass'></span>
                                         </div>
                                     </div>
@@ -69,13 +69,22 @@
                                     <div class="form-group">
                                         <label for="preference" class="col-sm-5 control-label">Contact Prefences</label>
                                         <div class="col-sm-7">
-                                            <select name="preference" class="form-control">
+                                            <select name="preference" class="form-control" required="required">
                                                 <option value="">Phone or Email</option>
                                                 <option value="">Phone</option>
                                                 <option value="">Email</option>
                                             </select>
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="preference" class="col-sm-5 control-label">Are You Supplier</label>
+                                        <div class="col-sm-7">
+                                            <input type="checkbox" class="form-control" data-label="Supplier" >
+                                        </div>
+                                    </div>
+
+
                                     <div class="form-group">
                                       <div class="col-sm-7">
                                       <button class="btn btn-warning pull-left prev-2" style="width: 150px;margin-left: 268px;">Save</button>

@@ -52,13 +52,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
+$route['welcome/(:any)'] = "$1";
 $route['css/(:any)'] = 'css/$1';
 $route['js/(:any)'] = "js/$1";
 $route['vendor/detail/(:num)'] = "vendor/$1";
 $route['planningtool/(:any)'] = "planningtool/$1";
 $route['planningtool/login'] = "planningtool/login";
 $route['planningtool/index'] = "planningtool";
+$route['WeddingCost/index'] = "WeddingCost";
+$route['Plankaro/index.php'] = "Plankaro";
 //$route['quote'] = "Quote";
 //$route['quote'] = "Quote";
 //$route['vendor'] = "Vendor";
