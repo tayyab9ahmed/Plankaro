@@ -68,4 +68,10 @@ class Vendor extends CI_Controller {
 
 		}
 	}
+
+	public function get_vendor_services()
+	{
+		$vendor_type = $this->input->post('vendor_type_id');
+		echo json_encode($this->vendor_model->get_vendor_services($vendor_type));
+	}
 }

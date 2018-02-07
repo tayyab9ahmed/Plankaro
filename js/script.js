@@ -94,13 +94,13 @@ jQuery(function(){
     });
 
 
-    $('.datepicker').datepicker({
+  /*  $('.datepicker').datepicker({
        format:"dd-mm-yyyy",
        ignoreReadonly: false
         }).on('changeDate', function(e){
         (e.viewMode=='days') ? $(this).datepicker('hide') : '';
    });
-
+*/
     $('.switch').switchable({
         label_position: 'after',
 
@@ -114,6 +114,27 @@ jQuery(function(){
     });
 
     $('.next-2').click(function(){
+        debugger;
+        var vendor_type_id = $('#vendor_type').find(":selected").val();
+        $.ajax({
+          url: "Vendor/get_vendor_services",
+          type: "post",
+          data: {vendor_type_id:vendor_type_id} ,
+          success: function (response) {
+             // you will get response from your php page (what you echo or print)
+             var tablehtml="<div class='table-responsive'><table class='table'><tbody>";
+             data = $.parseJSON(response);
+              $.each(data, function(i, item) {
+                  tablehtml = tablehtml + "<tr><td>"+item.Service_title+"</td><th>yes</th></tr>";
+              });
+             tablehtml= tablehtml +"</tbody></table></div>";
+             $("#service_ques").html(tablehtml);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+             console.log(textStatus, errorThrown);
+          }
+
+      });
         $('.step-one').fadeOut(200);
         $('.step-two').fadeIn(200);
         $('.step-three').fadeOut(200);

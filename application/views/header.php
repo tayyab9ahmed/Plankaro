@@ -24,13 +24,15 @@
   <script src="<?php echo base_url('js/bootstrapvalidator.js');?>"></script>
   <script src="<?php echo base_url('js/flipclock.min.js');?>"></script>
   <script src="<?php echo base_url('js/flipclock.js');?>"></script>
+  <script src="<?php echo base_url('js/switchable.min.js');?>"></script>
+
 
     <!--Navbar Starts
     ==================-->
     <nav class="navbar navbar-default">
        <div class="logo12">
-       <a class="pull-left"><!--<img src="<?php echo base_url('/images/logo.png');?>" alt="logo">-->
-         <b><span style="color: #0082f1;font-size: 30px;">Plan</span><span style="color: #E7873B;font-size: 30px;">Karo</span></b>
+       <a class="pull-left" style="margin: 0px auto;"><img style="height:100px;" src="<?php echo base_url('/images/logo.png');?>" alt="logo">
+
        </a>
         </div>
         <div class="container">

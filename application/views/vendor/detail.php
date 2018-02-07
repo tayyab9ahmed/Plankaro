@@ -244,7 +244,6 @@
         url:"http://maps.googleapis.com/maps/api/geocode/json?address="+address+"&sensor=false",
         type: "POST",
         success:function(res){
-          debugger;
            lat = res.results[0].geometry.location.lat;
            long = res.results[0].geometry.location.lng;
            var mapOptions = {

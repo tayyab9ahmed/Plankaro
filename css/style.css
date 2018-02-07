@@ -91,7 +91,7 @@ header .navbar
     padding-top: 0px;
     padding-bottom: 0px;
     margin-bottom: 0px;
-    background-color: #AC024E;
+   background-color: #000;
     border: none;
     box-shadow: 0 10px 30px -9px #000;
     border-radius: 0px;
@@ -141,6 +141,7 @@ header .navbar-nav>li>a
 
 header .navbar-right{
     /*margin-right: 50px;*/
+        padding-top: 12px;
 }
 
 header .navbar-nav>li>a:hover
@@ -190,7 +191,7 @@ header .navbar-nav>li>a:hover
 
 
 .header-image{
-    background-image: url(../images/wedding-stage.jpg);
+    background-image: url(../images/mainpage.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
@@ -202,8 +203,8 @@ header .navbar-nav>li>a:hover
 .header-image .content{
   /*  background-image: url(../images/Compare-banner.png);*/
     background-size: contain;
-    padding-top: 130px;
-  padding-bottom: 120px
+    padding-top: 150px;
+  padding-bottom: 300px
 }
 
 .magnifying{
@@ -260,7 +261,7 @@ header .navbar-nav>li>a:hover
 }
 
 .nav-search-margin{
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .nav-search select{
   height: 45px;
@@ -518,6 +519,12 @@ header .navbar-nav>li>a:hover
     border: 1px solid #0082f1;
 }
 
+
+.subheader{
+    padding: 0px !important;
+    font-size: 1em;
+    text-transform: none;
+}
 
 /*Footer
 ============*/

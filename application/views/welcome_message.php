@@ -17,6 +17,7 @@
         <!--Header Image
         =================-->
         <div class="header-image">
+
             <div class="bg-color">
                 <div class="content">
                     <div class="container">
@@ -41,12 +42,12 @@
                                   <option value="Karachi">Karachi</option>
                                   <option value="Islamabad">Islamabad</option>
                                 </select>
-                                <input type="submit" value="Find Vendors" class="btn btn-success" style="font-size:20px; margin-left:150px;">
+                                <input type="submit" value="Find Suppliers" class="btn btn-success" style="font-size:20px; margin-left:150px;">
                               </form>
                             </div>
-                            <div class="col-md-12" style="padding-top: 100px;">
+                            <!--<div class="col-md-12" style="padding-top: 100px;">
                                 <h1><span>Memorable </span>Moments</h1>
-                            </div>
+                            </div>--->
                         </div>
                     </div>
                 </div>

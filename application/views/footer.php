@@ -1,5 +1,5 @@
 <footer>
-    <div class="content">
+      <div class="content">
         <div class="container">
 
             <div class="subscribe">
