@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Wedding Manager</title>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.20&sensor=true&key=AIzaSyDEhDIQB447edZDYjJ-kAg4gnm_zrNDiW0"></script>
 </head>
 <body>
 
@@ -14,42 +15,51 @@
         <div class="content">
             <div class="container">
               <h1><span>Find The Best Suppliers In Your Area</span></h1>
+              <div id="map" style="height:300px; width:100%; "></div>
+              <hr>
               <div class="col-md-12 nav-search">
                 <form method="post" action="search">
-                  <select required="required" name="vendor_type"  class="vendor_search magnifying select-left">
+                  <select required="required" name="vendor_type"  class="vendor_search select-left">
                       <option value="">Select Category</option>
                       <?php if(isset($get_all_vendor_type) && count($get_all_vendor_type) > 0)
                       {
                         foreach ($get_all_vendor_type as $vendor_type)
                         {
-                            ?><option value="<?php echo $vendor_type['Vendor_type_id']; ?>"><?php echo $vendor_type['Vendor_type_name']; ?></option>
+                          $type_id = $vendor_type['Vendor_type_id'];
+
+                            ?><option <?php if ((int)$vendor_type == $type_id){ ?>selected<?php }?>  value="<?php echo $vendor_type['Vendor_type_id']; ?>"><?php echo $vendor_type['Vendor_type_name']; ?></option>
 
                         <?php
                         }
                       }?>
                   </select>
-                  <select  required="required" name="city" class="vendor_search magnifying select-left" style="margin-left:20px;">
+                  <select  required="required" name="city" class="vendor_search select-left" style="margin-left:20px;">
                     <option value="">Select City</option>
-                    <option value="Lahore">Lahore</option>
-                    <option value="Karachi">Karachi</option>
-                    <option value="Islamabad">Islamabad</option>
+                    <option <?php if ($city == "Lahore"){ ?>selected<?php }?> value="Lahore">Lahore</option>
+                    <option <?php if ($city == "Karachi"){ ?>selected<?php }?> value="Karachi">Karachi</option>
+                    <option <?php if ($city == "Islamabad"){ ?>selected<?php }?> value="Islamabad">Islamabad</option>
                   </select>
-                  <input type="submit" value="Find Vendors" class="btn btn-success" style="font-size:20px; margin-left:150px">
+                  <input type="submit" value="Find Suppliers" class="btn btn-success magnifying" style="font-size:20px; margin-left:150px;padding-left: 40px">
                 </form>
               </div>
             </div>
 
               <div class="container">
+                <hr>
+              <div class="col-md-12">
+                <h3 class="vendor_name"><?php echo count($listing); ?> Records Found.</h3>
+              </div>
+              <hr>
               <div class="col-md-12" style="margin-top:40px; margin-bottom:40px; z-index:1;">
                 <?php if (isset($listing) && count($listing) > 0)
                 {
                   foreach ($listing as $dat)
                   {
                     ?>
-                <div class="col-md-6 vendor-box" style="margin-bottom:20px">
+                <div class="col-md-4 vendor-box" style="margin-bottom:20px">
 
                     <a href="detail/<?php echo $dat['Vendor_id']; ?>">
-                    <img src="<?php echo base_url() ; ?>images/blog1.jpg" class="img-responsive" alt="">
+                    <img style="height:320px;" src="<?php echo base_url() ; ?>images/vendortesting/<?php echo $dat['Vendor_picture_path']; ?>" class="img-responsive" alt="">
                     <div class="content">
                         <h3 class="vendor_name" style="font-size: 20px"><?php echo $dat['Vendor_name']; ?></h3>
 
@@ -123,6 +133,42 @@
         </div>
     </div>
   </section>
+  <script>
+  $(document).ready(function(){
+    initmap();
+  });
+
+  function initmap() {
+    debugger;
+    var lat;
+    var long;
+    var mapCanvas = document.getElementById("map");
+    var locations = <?php echo json_encode($listing); ?>;
+
+    // Initialize the Geocoder
+
+           lat = 31.504214566890944;
+           long = 74.33143593652346;
+           var mapOptions = {
+             center: new google.maps.LatLng(lat, long),
+             zoom: 11
+           }
+           var map = new google.maps.Map(mapCanvas, mapOptions);
+
+           for(var i =0 ; i < locations.length ;i++)
+           {
+           var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i]['Vendor_lat'], locations[i]['Vendor_long']),
+                map: map,
+                title: locations[i]['Vendor_name']+' - '+locations[i]['Vendor_address']
+              });
+            }
+
+
+
+
+  }
+  </script>
 
   <?php include_once('application/views/footer.php'); ?>
 </body>

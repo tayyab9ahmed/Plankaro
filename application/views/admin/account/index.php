@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Wedding Manager</title>
-    <link rel="stylesheet" href="/plankaro/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/plankarocss/font-awesome.min.css">
-    <link rel="stylesheet" href="/plankarocss/animate.css">
-    <link rel="stylesheet" href="/plankarocss/hamburgers.css">
-    <link rel="stylesheet" href="/plankarocss/creativelink/demo.css">
-    <link rel="stylesheet" href="/plankarocss/creativelink/component.css">
-    <link rel="stylesheet" href="/plankarocss/creativelink/normalize.css">
-    <link rel="stylesheet" href="/plankarocss/switchable.css">
-    <link rel="stylesheet" href="/plankarocss/datepicker.css">
-    <link rel="stylesheet" href="/plankaro/css/style.css">
+    <link rel="stylesheet" href="/Wedishedi/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Wedishedi/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Wedishedi/css/animate.css">
+    <link rel="stylesheet" href="/Wedishedi/css/hamburgers.css">
+    <link rel="stylesheet" href="/Wedishedi/css/creativelink/demo.css">
+    <link rel="stylesheet" href="/Wedishedi/css/creativelink/component.css">
+    <link rel="stylesheet" href="/Wedishedi/css/creativelink/normalize.css">
+    <link rel="stylesheet" href="/Wedishedi/css/switchable.css">
+    <link rel="stylesheet" href="/Wedishedi/css/datepicker.css">
+    <link rel="stylesheet" href="/Wedishedi/css/style.css">
 </head>
 <body>
-     <script src="/plankaro/js/jquery.min.js"></script>
-    <script src="/plankaro/js/bootstrap.min.js"></script>
-    <script src="/plankaro/js/linkhover.js"></script>
-    <script src="/plankaro/js/owl.carousel.min.js"></script>
-    <script src="/plankaro/js/waypoint.min.js"></script>
-    <script src="/plankaro/js/jquery.counterup.min.js"></script>
-    <script src="/plankaro/js/switchable.min.js"></script>
-    <script src="/plankaro/js/datepicker.js"></script>
-    <script src="/plankaro/js/script.js"></script>
+     <script src="/Wedishedi/js/jquery.min.js"></script>
+    <script src="/Wedishedi/js/bootstrap.min.js"></script>
+    <script src="/Wedishedi/js/linkhover.js"></script>
+    <script src="/Wedishedi/js/owl.carousel.min.js"></script>
+    <script src="/Wedishedi/js/waypoint.min.js"></script>
+    <script src="/Wedishedi/js/jquery.counterup.min.js"></script>
+    <script src="/Wedishedi/js/switchable.min.js"></script>
+    <script src="/Wedishedi/js/datepicker.js"></script>
+    <script src="/Wedishedi/js/script.js"></script>
 
     <!--Header Starts
     ==================-->
@@ -32,7 +32,7 @@
         <!--Navbar Starts
         ==================-->
         <nav class="navbar navbar-default">
-            <a class="pull-left"><img src="/plankaro/images/logo.png" alt="logo"></a>
+            <a class="pull-left"><img src="/Wedishedi/images/logo.png" alt="logo"></a>
             <div class="container">
                 <ul class="nav navbar-nav navbar-right header-menu hidden-xs">
                     <li><a href="#">Home</a></li>
@@ -132,7 +132,7 @@
     </footer>
 
     <div class="copyright">SK © 2016 All Rights Reserved</div>
-    
+
 
     <!--Footer
     =============-->

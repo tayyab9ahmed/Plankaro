@@ -14,7 +14,8 @@
     <section>
     <div class="vendor">
         <div class="content">
-            <?php if(1==1){ ?>
+            <?php $IsVendor = $this->session->userdata('IsVendor');
+             if($IsVendor==1){ ?>
               <div>
                 <nav class="navbar navbar-default">
                   <div class="container">

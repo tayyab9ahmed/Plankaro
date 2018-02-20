@@ -15,98 +15,68 @@
          <div class="form-body">
     <section>
                        <div class="step-three" style="">
-                           <h2>Create Account</h2>
-                           <div class="row">
-                             <div class="col-md-8">
-                               <i class="glyphicon glyphicon-user" style="font-size: 150px;margin-left: 365px;"></i>
-                             </div>
-                           </div>
-                           <form id="SingupForm" action="">
+                           <h2><b>Register Your Account</b></h2>
+                           <hr>
+                           <form id="user_signup" action="save" method="post" enctype="multipart/form-data" role="form" data-toggle="validator">
                                <div class="col-sm-12">
 
                                    <div class="form-group">
-                                        <label for="name1" class="col-sm-5 control-label">First Name</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" placeholder="First Name" name="name1" required="required">
+                                        <div class="col-sm-6">
+                                            <input type="text" required class="form-control" placeholder="First Name" name="User_fname" id="User_fname" required="required">
                                         </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="name2" class="col-sm-5 control-label">Last Name</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" placeholder="Last Name" name="name2" required="required">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="email" class="col-sm-5 control-label">Email</label>
-                                        <div class="col-sm-7">
-                                            <input type="email" class="form-control" placeholder="Email" name="email" required="required">
+                                        <div class="col-sm-6">
+                                            <input type="text" required class="form-control" placeholder="Last Name" name="User_lname" id="User_lname" required="required">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="phone" class="col-sm-5 control-label">Phone Number</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" id="phoneNumber" class="form-control" placeholder="03321231231" name="phoneNumber" required="required">
+                                        <div class="col-sm-12">
+                                            <input type="email" required class="form-control" placeholder="Email" name="User_email" id="User_email" data-fv-remote-name="User_email" required="required">
                                             <span id='message_phone'></span>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <input type="text" required id="phoneNumber" class="form-control" placeholder="Contact Number" name="User_phone_no" id="User_phone_no" required="required">
 
-                                    <div class="form-group">
-                                        <label for="phone" class="col-sm-5 control-label">Password</label>
-                                        <div class="col-sm-7">
-                                            <input type="password" id="password" class="form-control" placeholder="password" name="password" required="required">
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phone" class="col-sm-5 control-label">Confirm Password</label>
-                                        <div class="col-sm-7">
-                                            <input type="password" id="confirm_password" placeholder="password" class="form-control"  name="confirm_password" required="required">
-                                            <span id='message_pass'></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="preference" class="col-sm-5 control-label">Contact Prefences</label>
-                                        <div class="col-sm-7">
-                                            <select name="preference" class="form-control" required="required">
-                                                <option value="">Phone or Email</option>
-                                                <option value="">Phone</option>
-                                                <option value="">Email</option>
+                                        <div class="col-sm-6">
+                                            <select name="User_contact_preference" id="User_contact_preference" class="form-control" required="required">
+                                                <option>Select Contact Preference</option>
+                                                <option value="1">Phone and Email</option>
+                                                <option value="2">Phone</option>
+                                                <option value="3">Email</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="preference" class="col-sm-5 control-label">Are You Supplier</label>
-                                        <div class="col-sm-7">
-                                            <input type="checkbox" class="form-control" data-label="Supplier" >
+                                        <div class="col-sm-6">
+                                            <input type="password" required id="User_password" class="form-control" placeholder="Password" name="User_password" required="required">
                                         </div>
+                                        <div class="col-sm-6">
+                                            <input type="password" required id="confirm_password" placeholder="Confirm Password" class="form-control"  name="confirm_password" required="required">
+                                            <span id='message_pass'></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <input type="checkbox" name="IsVendor" style="height:30px; width:30px;" data-label="Supplier" >
+                                        </div>
+                                        <label for="preference" class="col-sm-4 control-label">Are You Supplier ?</label>
+
                                     </div>
 
 
                                     <div class="form-group">
                                       <div class="col-sm-7">
-                                      <button class="btn btn-warning pull-left prev-2" style="width: 150px;margin-left: 268px;">Save</button>
+                                      <button class="btn btn-warning pull-left signup" style="width: 150px;margin-left: 268px;">Register</button>
                                     </div>
                                     </div>
+                                    <div class="form-group">
+                                         <span class="pull-right col-sm-8"><a href="login">Login Existing Account </a> or forgot password</span>
+                                    </div>
                                </div>
-
-                              <!-- <div class="col-md-6 col-sm-12">
-                                   <div class="confirm">
-                                       <div class="header">
-                                           <h2 style="line-height:1">CONFIRM YOUR <br> REQUEST WITH</h2>
-                                       </div>
-                                       <div class="body">
-                                           <button class="btn btn-default facebook"><span style="padding-right: 30px"><i class="fa fa-facebook" aria-hidden="true"></i></span>FACEBOOK</button>
-                                           <button class="btn btn-default twitter"><span style="padding-right: 25px"><i class="fa fa-twitter" aria-hidden="true"></i></span> TWITTER</button>
-
-
-                                           <p>This is just to confirm your request. We will never post anything without your premission.</p>
-                                       </div>
-                                   </div>
-                               </div>
-                             -->
                                </form>
 
                        </div>
@@ -116,7 +86,9 @@
      </div>
      </div>
  </div>
+  <script type="text/javascript">
 
+  </script>
   <?php include_once('application/views/footer.php'); ?>
 </body>
 </html>

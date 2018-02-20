@@ -22,17 +22,6 @@ class planningtool extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function login()
-	{
-		$this->load->helper('url');
-		$this->load->view('planningtool/login.php');
-	}
-
-  public function signup()
-	{
-		$this->load->helper('url');
-		$this->load->view('planningtool/signup.php');
-	}
 
 	public function index()
 	{

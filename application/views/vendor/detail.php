@@ -66,7 +66,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h1 class="modal-title vendor_contact_header"><b>Contact Info</b></h4>
                   </div>
-                  <div class="modal-body">
+                  <div class="modal-body" style="background-color:#F4F496">
                     <div style="min-height:700px;">
                     <div class="col-md-6">
                       <div class="row">
@@ -107,7 +107,7 @@
                           </div>
                           <div class="col-md-10">
                             <h3 class="qust"><b>DO YOU USE ANY CONTRACT?</b></h3>
-                            <p><b>The hiring or retaining of the majority of professional services found on Plankaro will absolutely merit a contract.</b> Remember that a contract is designed to protect both you and the business, and virtually all reputable vendors will have one available for your review. If the vendor you are interviewing does not use contracts, you should seriously consider moving on to the next one on your list. The exception to this rule is if it is not standard practice for that type of service to use contracts (such as when buying wedding/party invitations or favors).</p>
+                            <p><b>The hiring or retaining of the majority of professional services found on Wedishedi will absolutely merit a contract.</b> Remember that a contract is designed to protect both you and the business, and virtually all reputable vendors will have one available for your review. If the vendor you are interviewing does not use contracts, you should seriously consider moving on to the next one on your list. The exception to this rule is if it is not standard practice for that type of service to use contracts (such as when buying wedding/party invitations or favors).</p>
                           </div>
                         </div>
                         <div style="padding-top:20px;">
@@ -115,7 +115,7 @@
                           <div class="serial-num"><span>3</span></div>
                           </div>
                           <div class="col-md-10">
-                            <h3 class="qust"><b>DO YOU HAVE ANY REVIEWS ON PLANKARO.COM?</b></h3>
+                            <h3 class="qust"><b>DO YOU HAVE ANY REVIEWS ON Wedishedi.COM?</b></h3>
                             <p>Real referrals from satisfied clients are hard to fake. Decidio verifies the customer contact information for each posted review for authenticity. <b>If they do not have any reviews posted from previous customers, ask why not.</b> With up to ten thousand brides and party planners using our site every day (including yourself), most reputable businesses will have at least a few reviews regarding the quality of their service. Before hiring, call and ask questions to both previous customers and professional references.</p>
                           </div>
                         </div>
@@ -173,7 +173,7 @@
             <div class="container" style="margin-top: 30px;margin-bottom: 30px;">
               <div class="row">
                 <div class="col-md-8">
-                  <img src="../../images/blog2.jpg" class="img-responsive" alt="">
+                  <img src="../../images/vendortesting/<?php echo $get_vendor_by_id['Vendor_picture_path']; ?>" class="img-responsive" alt="">
                 </div>
                 <div class="col-md-4">
                   <span class="vendor_name" style="font-size: 22px;padding-left: 140px;">Details</span>
@@ -181,10 +181,10 @@
                     <i class="glyphicon glyphicon-map-marker" style="font-size:20px;"></i>
                       <span style="font-size:20px; padding-left:15px; color:#aa6708;"><b><?php echo $get_vendor_by_id['Vendor_address']; ?>.</b></span>
                     <hr></hr>
-                    <span><i class="glyphicon glyphicon-thumbs-up" style="font-size:25px;  color:darkgray;">20</i><span>
+                    <!---<span><i class="glyphicon glyphicon-thumbs-up" style="font-size:25px;  color:darkgray;">20</i><span>
                     <span><i class="glyphicon glyphicon-thumbs-down" style="font-size:25px;margin-left:50px; margin-right:50px; color:darkgray;">10</i><span>
                     <button class="btn btn-info" data-toggle="modal" data-target="#feedback">Leave Feedback</button>
-                      <hr></hr>
+                      <hr></hr>--->
                     <div class="col-md-12" >
                       <div id="map" style="height:300px; width:100%;"></div>
                     </div>
@@ -196,7 +196,7 @@
                 <div class="col-md-6" style="margin-top:30px;">
                   <ul class="nav nav-pills nav-justified">
                     <li class="active"><a data-toggle="tab" href="#Overview">Overview</a></li>
-                    <li><a data-toggle="tab" href="#Avalaiblity">Avalaiblity</a></li>
+                    <!--<li><a data-toggle="tab" href="#Avalaiblity">Avalaiblity</a></li>-->
                   </ul>
 
                   <div class="tab-content">
@@ -205,13 +205,13 @@
                       <div class="table-responsive">
                         <table class="table">
                           <tbody>
-                            <?php if(isset($get_vendor_services) && count($get_vendor_services)>0)
+                            <?php if(isset($get_all_vendor_services) && count($get_all_vendor_services)>0)
                             {
-                              foreach ($get_vendor_services as $vendor_services) {
+                              foreach ($get_all_vendor_services as $vendor_services) {
                               ?>
                               <tr>
-                                <td><?php echo $vendor_services['Service_title'];?></td>
-                                  <th>yes</th>
+                                <td><?php echo $vendor_services['title'];?></td>
+                                  <th><?php echo $vendor_services['result'];?></th>
                               </tr>
                               <?php
                               }
@@ -247,7 +247,7 @@
            lat = res.results[0].geometry.location.lat;
            long = res.results[0].geometry.location.lng;
            var mapOptions = {
-             center: new google.maps.LatLng(31.5546, 74.3572),
+             center: new google.maps.LatLng(lat, long),
              zoom: 12
            }
            var myLatLng = {lat: lat, lng: long};

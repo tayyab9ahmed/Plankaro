@@ -15,9 +15,9 @@
          <div class="form-body">
     <section>
                        <div class="step-three" style="">
-                           <h2>Please Login</h2>
+                           <h2><b>Login To Your Account</b></h2>
 
-                           <form id="SingupForm" action="">
+                           <form id="user-login" action="login" method="post" enctype="multipart/form-data" role="form" data-toggle="validator">
                                <div class="col-sm-6 col-sm-12">
                                  <div class="row">
                                    <div class="col-md-12">
@@ -26,21 +26,19 @@
                                  </div>
 
                                     <div class="form-group">
-                                        <label for="email" class="col-sm-5 control-label">Email</label>
-                                        <div class="col-sm-7">
-                                            <input type="email" class="form-control" placeholder="Email" name="email" required="required">
+                                        <div class="col-sm-12">
+                                            <input type="email" class="form-control" placeholder="Email" id="User_email" name="User_email" required="required">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="phone" class="col-sm-5 control-label">Password</label>
-                                        <div class="col-sm-7">
-                                            <input type="password" placeholder="Password" id="password" class="form-control" name="password" required="required">
+                                        <div class="col-sm-12">
+                                            <input type="password" placeholder="Password" id="User_password" name="User_password" class="form-control" required="required">
                                         </div>
                                     </div>
 
                                <div class="form-group">
-                                      <button class="btn btn-default" style="width: 100%;">Let me in</button>
+                                      <button class="btn btn-default login" style="width: 100%;">Let me in</button>
                                </div>
                                <div class="form-group">
                                     <span><a href="signup">Create account </a> or forgot password</span>

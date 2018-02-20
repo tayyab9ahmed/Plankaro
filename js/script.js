@@ -16,7 +16,7 @@ jQuery(function(){
     clock.setTime(220880);
     clock.setCountdown(true);
     clock.start();
-// end time counter
+/* end time counter
   $('#phoneNumber').on('change', function () {
     debugger;
       var phone_num_regex = /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/i;
@@ -60,6 +60,139 @@ jQuery(function(){
         });
 
 */
+//login form validation and submittion
+$('.login').click(function(){
+debugger;
+
+$('#user-login').bootstrapValidator({
+  trigger: 'blur',
+  fields: {
+      User_email: {
+          validators: {
+              notEmpty: {
+                  message: 'The email is required'
+              },
+              emailAddress: {
+                  message: 'User email is not a valid email address'
+              }
+          }
+      },
+      User_password: {
+              validators: {
+                  notEmpty: {
+                      message: 'The password is required and can\'t be empty'
+                  }
+              }
+          }
+  }
+});
+if($('#user-login').bootstrapValidator('validate').has('.has-error').length > 0){
+  return false;
+}
+else {
+  debugger;
+  $.ajax({type: "POST", url: "dologin", data:$("#user-login").serialize(), success: function(result){
+      if(result == "true")
+      {
+        window.location.href = 'http://localhost:8080/Wedishedi/Welcome/dashboard';
+      }
+      else {
+        window.location.href = 'http://localhost:8080/Wedishedi/Welcome/login/?result=false';
+      }
+
+	  }});
+}
+});
+// signup form validation and submittion
+$('.signup').click(function(){
+debugger;
+$('#user_signup').bootstrapValidator({
+  trigger: 'blur',
+  fields: {
+      User_fname: {
+          validators: {
+              notEmpty: {
+                  message: 'First name is required'
+              },
+              regexp: {
+                  regexp: /^[a-zA-Z ]+$/,
+                  message: 'First name cannot have numbers or symbols'
+              }
+          }
+      },
+      User_lname: {
+          validators: {
+              notEmpty: {
+                  message: 'Last name is required'
+              },
+              regexp: {
+                  regexp: /^[a-zA-Z ]+$/,
+                  message: 'Last name cannot have numbers or symbols'
+              }
+          }
+      },
+      User_email: {
+          validators: {
+              notEmpty: {
+                  message: 'The email is required'
+              },
+              emailAddress: {
+                  message: 'User email is not a valid email address'
+              }
+          }
+      },
+      User_phone_no: {
+          validators: {
+              notEmpty: {
+                  message: 'User contact number is required'
+              },
+              regexp: {
+                  regexp: /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/,
+                  message: 'The input is not a valid Pakistan phone number'
+              }
+          }
+      },
+      User_password: {
+              validators: {
+                  notEmpty: {
+                      message: 'The password is required and can\'t be empty'
+                  },
+                  identical: {
+                      field: 'confirm_password',
+                      message: 'The password and its confirm are not the same'
+                  }
+              }
+          }
+  }
+});
+
+$.ajax({type: "POST", url: "chk_email", async: false, data:{User_email:$("#User_email").val()}, success: function(result){
+    debugger;
+    if(result == "false")
+    {
+     $('#User_email').css({'border-color':'#a94442'});
+     $('#message_phone').html('Email already exists. Please Login with your existed account.').css({'color':'#a94442','font-size':'12px'});
+     return false;
+    }
+    else {
+      $('#User_email').css({'border-color':'#3c763d'});
+      $('#message_phone').html('');
+      return true;
+    }
+  }});
+if($('#user_signup').bootstrapValidator('validate').has('.has-error').length > 0 || $('#message_phone').html().length > 0){
+    return false;
+}
+else {
+  debugger;
+
+  $.ajax({type: "POST", url: "save", async: false, data:$("#user_signup").serialize(), success: function(result){
+       window.location.href = 'http://localhost:8080/Wedishedi/Welcome/login';
+	  }});
+}
+});
+
+
     $("#service-slider").owlCarousel({
         items : 3,
         itemsCustom : false,

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wedding Manager</title>
+    <title>Wedishedi</title>
 </head>
 <body>
 
